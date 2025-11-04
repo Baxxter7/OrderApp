@@ -8,10 +8,19 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Controllers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\OrderApp.Business\OrderApp.Business.csproj" />
+      <ProjectReference Include="..\OrderApp.Domain\OrderApp.Domain.csproj" />
+      <ProjectReference Include="..\OrderApp.Infraestructure\OrderApp.Infraestructure.csproj" />
     </ItemGroup>
 
 </Project>
