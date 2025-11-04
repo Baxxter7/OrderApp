@@ -14,10 +14,11 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.CustomerName)
-                .IsRequired();
-            entity.Property(e => e.OrderDate)
                 .IsRequired()
                 .HasMaxLength(150);
+            entity.Property(e => e.OrderDate)
+                .IsRequired();
+
             entity.Property(e => e.TotalAmount)
                 .HasColumnType("decimal(18, 2)");
         });
