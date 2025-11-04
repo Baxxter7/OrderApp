@@ -6,7 +6,7 @@ using OrderApp.Domain.Interfaces;
 
 namespace OrderApp.Business.Services;
 
-public class OrderService 
+public class OrderService : IOrderService
 {
     private  readonly IOrderRepository _orderRepository;
     private readonly IMapper _mapper;
@@ -26,8 +26,8 @@ public class OrderService
 
         Order order = new Order()
         {
-            CustomerName = createOrderDto.CostumerName,
-            CustomerEmail = createOrderDto.CostumerEmail,
+            CustomerName = createOrderDto.CustomerName,
+            CustomerEmail = createOrderDto.CustomerEmail,
             OrderDate = DateTime.Now,
             Status = OrderStatus.Pending,
             Items = createOrderDto.Items.Select(item => new OrderItem
